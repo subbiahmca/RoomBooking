@@ -1,4 +1,6 @@
 class RoomsController < ApplicationController
+
+
   before_action :authenticate_user!
   before_action :set_room, only: [:show, :edit, :update, :destroy]
 
@@ -16,6 +18,7 @@ class RoomsController < ApplicationController
   # GET /rooms/new
   def new
     @room = Room.new
+      authorize @room
   end
 
   # GET /rooms/1/edit
